@@ -58,42 +58,74 @@ namespace lemon_shop
                 Random rnd = new Random();
                 int till_float = rnd.Next(0, 11);
                 Console.WriteLine(till_float);
-                while(true)
+                while (true)
                 {
 
                     Console.WriteLine("what do you want to do?");
                     Console.WriteLine("check till works or 1");
                     Console.WriteLine("check float or 2");
                     Console.WriteLine("wait for customers or 3");
-                
-                    string input = Console.ReadLine();
-                    switch (input)
-                    {
-                        case "1": // correction 1
-                        Console.WriteLine("checking till");
-                        break;
 
-                        case "2": // correction 2
+                    string input = Console.ReadLine();
+                    int till_check = 0;
+                    if (input == "1")
+
+                    {
+                        Console.WriteLine("checking till");
+                        till_check++;
+                    }
+                    else if (input == "2")
+                    {
                         Console.WriteLine("checking float");
-                        break;
-                        
-                        case "3":
-                        Console.WriteLine("waiting");
-                        break;
-                        
-                        default:
-                        Console.WriteLine(" You did not type a or b");
-                        Console.WriteLine();
-                        Console.ReadLine();
-                        break;
-                            
+                        if (till_check == 0)
+                        {
+                            Console.WriteLine("please check till is working first");
+                            System.Threading.Thread.Sleep(1000);
+                            break;
+                        }
+                        else
+                        {
+                            Console.WriteLine("you have {0} in your float", till_float);
+                            Console.WriteLine("is this okay?");
+                            string answer = Console.ReadLine();
+                            if ((answer == "yes") || (answer == "y"))
+                            {
+                                Console.WriteLine("okay");
+                                Console.WriteLine("do you want to remove money from the bank");
+                                string user_input = Console.ReadLine();
+                                if ((answer == "yes") || (answer == "y"))
+                                {
+                                    int money_needed = 10 - till_float;
+                                    int final_float = money_needed + till_float;
+                                    Console.WriteLine("your new float is {0}", final_float);
+                                }
+                                else
+                                {
+                                    Console.WriteLine("okay - breaking ");
+                                    System.Threading.Thread.Sleep(500);
+
+                                }
+
+
+                            }
+                        }
                     }
                 }
             }
         }
     }
 }
+                        
+                    
+             
+
+                        
+                        
+
+                        
                             
+                    
+                                        
                     
 
            
