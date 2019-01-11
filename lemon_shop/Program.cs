@@ -62,7 +62,7 @@ namespace lemon_shop
                 Console.WriteLine("check till works or 1");
                 Console.WriteLine("check float or 2");
                 Console.WriteLine("wait for customers or 3");
-                Console.ReadLine();
+                
                 //// case switch needed for each of the options above to be done in CS
             }
         }
