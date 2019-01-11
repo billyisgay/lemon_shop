@@ -58,14 +58,42 @@ namespace lemon_shop
                 Random rnd = new Random();
                 int till_float = rnd.Next(0, 11);
                 Console.WriteLine(till_float);
-                Console.WriteLine("what do you want to do?");
-                Console.WriteLine("check till works or 1");
-                Console.WriteLine("check float or 2");
-                Console.WriteLine("wait for customers or 3");
+                while(true)
+                {
+
+                    Console.WriteLine("what do you want to do?");
+                    Console.WriteLine("check till works or 1");
+                    Console.WriteLine("check float or 2");
+                    Console.WriteLine("wait for customers or 3");
                 
-                //// case switch needed for each of the options above to be done in CS
+                    string input = Console.ReadLine();
+                    switch (input)
+                    {
+                        case "1": // correction 1
+                        Console.WriteLine("checking till");
+                        break;
+
+                        case "2": // correction 2
+                        Console.WriteLine("checking float");
+                        break;
+                        
+                        case "3":
+                        Console.WriteLine("waiting");
+                        break;
+                        
+                        default:
+                        Console.WriteLine(" You did not type a or b");
+                        Console.WriteLine();
+                        Console.ReadLine();
+                        break;
+                            
+                    }
+                }
             }
         }
     }
 }
-            
+                            
+                    
+
+           
