@@ -12,7 +12,7 @@ namespace lemon_shop
         {
             String username;
             String password;
-            String[,] accnts = { { "cads123", "dadada" }, { "bildo", "1234" }, { "delossantos", "gagaga" } };
+            String[,] accnts = { { "reggie", "1234" }, { "bildo", "1234" }, { "isaac", "1234" } };
             int row;
             bool isValideUser = false;
             for (int x = 3; x >= 1; x--)
