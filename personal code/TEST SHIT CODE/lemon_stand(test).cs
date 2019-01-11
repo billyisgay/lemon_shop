@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,7 +12,7 @@ namespace lemon_shop
         {
             String username;
             String password;
-            String[,] accnts = { { "reggie", "1234" }, { "bildo", "1234" }, { "isaac", "1234" } };
+            String[,] accnts = { { "cads123", "dadada" }, { "bildo", "1234" }, { "delossantos", "gagaga" } };
             int row;
             bool isValideUser = false;
             for (int x = 3; x >= 1; x--)
@@ -49,7 +49,7 @@ namespace lemon_shop
                 {
                     break;
                 }
-               
+
             }
             {
                 Console.WriteLine("login correct");
@@ -59,20 +59,20 @@ namespace lemon_shop
                 int till_check = 0;
                 Random rnd = new Random();
                 int till_float = rnd.Next(0, 11);
-               
-                
+
+
                 while (true)
                 {
-                    
+
                     Console.WriteLine("what do you want to do?");
                     Console.WriteLine("check till works or 1");
                     Console.WriteLine("check float or 2");
                     Console.WriteLine("wait for customers or 3");
 
                     string input = Console.ReadLine();
-                    
+
                     if (input == "1")
-                    { 
+                    {
                         Console.WriteLine("checking till");
                         if (till_check == 0)
                         {
@@ -83,15 +83,15 @@ namespace lemon_shop
                             Console.Clear();
                             continue;
                         }
-                        else if (till_check == 1) 
+                        else if (till_check == 1)
                         {
-                            
+
                             Console.WriteLine("till is still working");
                             System.Threading.Thread.Sleep(1000);
                             Console.Clear();
                             continue;
                         }
-                        
+
                     }
                     if (input == "2")
                     {
@@ -118,7 +118,7 @@ namespace lemon_shop
                                     int money_needed = 10 - till_float;
                                     Console.WriteLine(money_needed);
                                     int final_float = money_needed + till_float;
-                                    till_float = final_float ;
+                                    till_float = final_float;
                                     Console.WriteLine("your new float is {0}", final_float);
                                     System.Threading.Thread.Sleep(2000);
                                     Console.Clear();
@@ -131,7 +131,7 @@ namespace lemon_shop
                                     continue;
                                 }
 
-                                
+
                             }
                             if ((answer == "yes") || (answer == "y"))
                             {
@@ -160,17 +160,16 @@ namespace lemon_shop
         }
     }
 }
-                        
-                    
-             
 
-                        
-                        
 
-                        
-                            
-                    
-                                        
-                    
 
-           
+
+
+
+
+
+
+
+
+
+
