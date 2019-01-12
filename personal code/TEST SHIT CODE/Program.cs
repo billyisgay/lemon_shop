@@ -81,7 +81,7 @@ namespace lemon_shop
                             Console.WriteLine("till is working");
                             System.Threading.Thread.Sleep(1000);
                             Console.Clear();
-                            continue;
+                            
                         }
                         else if (till_check == 1)
                         {
@@ -89,7 +89,7 @@ namespace lemon_shop
                             Console.WriteLine("till is still working");
                             System.Threading.Thread.Sleep(1000);
                             Console.Clear();
-                            continue;
+                            
                         }
 
                     }
@@ -101,7 +101,7 @@ namespace lemon_shop
                             Console.WriteLine("please check till is working first");
                             System.Threading.Thread.Sleep(1000);
                             Console.Clear();
-                            continue;
+                            
                         }
                         if (till_check == 1)
                         {
@@ -122,13 +122,13 @@ namespace lemon_shop
                                     Console.WriteLine("your new float is {0}", final_float);
                                     System.Threading.Thread.Sleep(2000);
                                     Console.Clear();
-                                    continue;
+                                    
                                 }
                                 if ((user_input == "no") || (user_input == "n"))
                                 {
                                     Console.WriteLine("okay - breaking ");
                                     System.Threading.Thread.Sleep(500);
-                                    continue;
+                                    
                                 }
 
 
@@ -138,23 +138,23 @@ namespace lemon_shop
                                 Console.WriteLine("your float is {0}", till_float);
                                 System.Threading.Thread.Sleep(1000);
                                 Console.Clear();
-                                continue;
+                                
                             }
                         }
                     }
-                    if (input == "3")
                     {
-                        Console.Clear();
-                        Random rnd2 = new Random();
-                        int customer_wait = rnd2.Next(1500, 7000);
-                        System.Threading.Thread.Sleep(customer_wait);
-                        Console.WriteLine("welcome to the shop customer");
+
+                        if (input == "3")
+                        {
+                            Console.Clear();
+                            Random rnd2 = new Random();
+                            int customer_wait = rnd2.Next(1500, 7000);
+                            System.Threading.Thread.Sleep(customer_wait);
+                            Console.WriteLine("welcome to the shop customer");
+                            Console.WriteLine("kill me");
+
+                        }
                     }
-
-
-
-
-
                 }
             }
         }
