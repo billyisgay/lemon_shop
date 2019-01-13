@@ -1,9 +1,11 @@
 {
   "ExpandedNodes": [
     "",
+    "\\lemon_shop",
     "\\personal code",
-    "\\personal code\\TEST SHIT CODE"
+    "\\personal code\\TEST SHIT CODE",
+    "\\personal code\\TEST SHIT CODE\\Properties"
   ],
-  "SelectedNode": "\\personal code\\TEST SHIT CODE\\lemon_shop(test).sln",
+  "SelectedNode": "\\personal code\\TEST SHIT CODE\\lemon_stand(test).cs",
   "PreviewInSolutionExplorer": false
 }
