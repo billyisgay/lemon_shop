@@ -12,7 +12,7 @@ namespace lemon_stand
         {
             String username;
             String password;
-            String[,] accnts = { { "reggie", "1234" }, { "bildo", "1234" }, { "isaac", "1234" }, {"lemon", "cheese"} };
+            String[,] accnts = { { "reggie", "1234" }, { "bildo", "1234" }, { "isaac", "1234" } };
             int row;
             bool isValideUser = false;
             for (int x = 3; x >= 1; x--)
@@ -42,7 +42,7 @@ namespace lemon_stand
                     else if (x.Equals(1))
                     {
                         Console.Write("Goodbye!");
-                        break;
+                        Environment.Exit(0);
                     }
                 }
                 else

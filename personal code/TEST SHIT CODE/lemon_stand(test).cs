@@ -42,7 +42,7 @@ namespace lemon_stand
                     else if (x.Equals(1))
                     {
                         Console.Write("Goodbye!");
-                        break;
+                        Environment.Exit(0);
                     }
                 }
                 else
