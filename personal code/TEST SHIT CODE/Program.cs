@@ -105,12 +105,14 @@ namespace lemon_stand
                                     switch (user_input)
                                     {
                                         case "no":
+                                        case "n":
                                             Console.WriteLine("okay");
                                             Console.WriteLine("do you want to remove money from the bank");
                                             string user_input2 = Console.ReadLine();
                                             switch (user_input2)
                                             {
                                                 case "yes":
+                                                case "y":
                                                     int money_needed = 10 - till_float;
                                                     Console.WriteLine(money_needed);
                                                     int final_float = money_needed + till_float;
@@ -120,13 +122,15 @@ namespace lemon_stand
                                                     Console.Clear();
                                                     break;
                                                 case "no":
-                                                    Console.WriteLine("okay - breaking ");
+                                                case "n":
+                                                    Console.WriteLine("okay - breaking");
                                                     System.Threading.Thread.Sleep(500);
                                                     break;
                                             }
                                             break;
 
                                         case "yes":
+                                        case "y":
                                             Console.WriteLine("your float is {0}", till_float);
                                             System.Threading.Thread.Sleep(1000);
                                             Console.Clear();
@@ -144,7 +148,9 @@ namespace lemon_stand
 
                             while (true)
                             {
+
                                 Console.WriteLine("hello");
+                                Console.WriteLine("what would you like to do");
                                 Console.ReadLine();
                             }
                     }
@@ -152,5 +158,5 @@ namespace lemon_stand
             }
         }
     }
-
 }
+                    
