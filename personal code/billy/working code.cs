@@ -158,13 +158,14 @@ namespace lemon_stand
                                 Console.WriteLine("hello");
                                 Console.WriteLine("what would you like to do");
 
-                                menu1 = new string[3]("borgor", "£3.00", stock1);
-                                menu2 = new string[3]("cheese borgor", "£3.50", stock1);
-                                menu3 = new string[3]("chips", "£1.50", stock1);
-                                menu4 = new string[3]("lemonade", "£1.00", stock1);
-                                menu5 = new string[3]("coke", "£1.00", stock1);
-                                menu6 = new string[3]("fanta", "£1.00", stock1);
+                                menu1 = new string[3]("borgor [1]", "£3.00", stock1);
+                                menu2 = new string[3]("cheese borgor [2]", "£3.50", stock1);
+                                menu3 = new string[3]("chips [3]", "£1.50", stock1);
+                                menu4 = new string[3]("lemonade [4]", "£1.00", stock1);
+                                menu5 = new string[3]("coke [5]", "£1.00", stock1);
+                                menu6 = new string[3]("fanta [6]", "£1.00", stock1);
                                 menuall = new string[6][](menu1, menu2, menu3, menu4, menu5, menu6);
+                                string[] Order = new string[][] { };
 
                                 foreach(string i in menuall)
                                 {
@@ -172,7 +173,38 @@ namespace lemon_stand
                                 }
                                 choice = Console.ReadLine();
 
+                                if (choice == '1')
+                                {
+                                    Order =+ menu1;
+                                }
+                                if (choice == '2')
+                                {
+                                    Order =+ menu2;
+                                }
+                                if (choice == '3')
+                                {
+                                    Order =+ menu3;
+                                }
+                                if (choice == '4')
+                                {
+                                    Order =+ menu4;
+                                }
+                                if (choice == '5')
+                                {
+                                    Order =+ menu5;
+                                }
+                                if (choice == '6')
+                                {
+                                    Order =+ menu6;
+                                }
+
+                                foreach (string i in order)
+                                {
+                                    Console.WriteLine(i);
+                                }
+                                Console.WriteLine("is this everything?");
                             }
+
                         default:
                             Console.Clear();
                             break;
