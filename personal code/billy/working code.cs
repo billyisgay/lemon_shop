@@ -140,7 +140,7 @@ namespace lemon_stand
                                             Console.WriteLine("please choose an option");
                                             System.Threading.Thread.Sleep(1500);
                                             Console.Clear();
-                                            goto 
+                                            break;
                                     }
                                     break;
                             }
@@ -154,7 +154,7 @@ namespace lemon_stand
 
                             while (true)
                             {
-
+                                //wagwan this is where i am
                                 Console.WriteLine("hello");
                                 Console.WriteLine("what would you like to do");
                                 Console.ReadLine();
@@ -168,7 +168,3 @@ namespace lemon_stand
         }
     }
 }
-                            
-
-                            
-                                        
