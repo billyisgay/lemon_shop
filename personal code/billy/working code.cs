@@ -157,7 +157,21 @@ namespace lemon_stand
                                 //wagwan this is where i am
                                 Console.WriteLine("hello");
                                 Console.WriteLine("what would you like to do");
-                                Console.ReadLine();
+
+                                menu1 = new string[3]("borgor", "£3.00", stock1);
+                                menu2 = new string[3]("cheese borgor", "£3.50", stock1);
+                                menu3 = new string[3]("chips", "£1.50", stock1);
+                                menu4 = new string[3]("lemonade", "£1.00", stock1);
+                                menu5 = new string[3]("coke", "£1.00", stock1);
+                                menu6 = new string[3]("fanta", "£1.00", stock1);
+                                menuall = new string[6][](menu1, menu2, menu3, menu4, menu5, menu6);
+
+                                foreach(string i in menuall)
+                                {
+                                    Console.WriteLine(i);
+                                }
+                                choice = Console.ReadLine();
+
                             }
                         default:
                             Console.Clear();
