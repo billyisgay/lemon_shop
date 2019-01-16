@@ -179,7 +179,7 @@ namespace lemon_stand
                                     Console.WriteLine(" ");
                                 }
 
-                                Console.WriteLine("if you would like quit enter [q]");
+                                Console.WriteLine("if you would like quit or if your finished enter [q]");
                                 Console.WriteLine("what would you like to do");
                                 string choice = Console.ReadLine();
 
