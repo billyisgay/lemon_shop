@@ -37,7 +37,9 @@ namespace lemon_stand
                     if (x != 1)
                     {
                         Console.WriteLine("Please Try Again.");
-                        Console.Write("\n");
+                        System.Threading.Thread.Sleep(1000);
+                        Console.Clear();
+
                     }
                     else if (x.Equals(1))
                     {
@@ -57,6 +59,7 @@ namespace lemon_stand
                 Console.Clear();
                 Console.WriteLine("welcome to the shop");
                 int till_check = 0;
+                int float_check = 0;
                 Random rnd = new Random();
                 int till_float = rnd.Next(0, 11);
                 while (true)
@@ -70,7 +73,7 @@ namespace lemon_stand
                     switch (answer)
                     {
                         case "1":
-                            Console.WriteLine("slected 1");
+
 
                             switch (till_check)
                             {
@@ -88,7 +91,7 @@ namespace lemon_stand
                             }
                             break;
                         case "2":
-                            Console.WriteLine("selected 2");
+
 
                             switch (till_check)
                             {
@@ -98,6 +101,7 @@ namespace lemon_stand
                                     Console.Clear();
                                     break;
                                 case 1:
+                                    float_check++;
                                     Console.WriteLine("you have {0} in your float", till_float);
                                     Console.WriteLine("is this okay?");
                                     string user_input = Console.ReadLine();
@@ -140,7 +144,7 @@ namespace lemon_stand
                                             Console.WriteLine("please choose an option");
                                             System.Threading.Thread.Sleep(1500);
                                             Console.Clear();
-                                            goto 
+                                            break;
                                     }
                                     break;
                             }
@@ -151,24 +155,41 @@ namespace lemon_stand
                             Random rnd2 = new Random();
                             int customer_wait = rnd2.Next(1500, 7000);
                             System.Threading.Thread.Sleep(customer_wait);
-
-                            while (true)
+                            switch (till_check)
                             {
+                                case 0:
+                                    Console.WriteLine("please open the till first");
+                                    System.Threading.Thread.Sleep(1000);
+                                    Console.Clear();
+                                    break;
 
-                                Console.WriteLine("hello");
-                                Console.WriteLine("what would you like to do");
-                                Console.ReadLine();
-                            }
-                        default:
-                            Console.Clear();
-                            break;
+                                case 1:
+                                    switch (float_check)
+                                    {
+                                        case 0:
+                                            Console.WriteLine("please check your float first");
+                                            System.Threading.Thread.Sleep(1000);
+                                            break;
+                                            
+                                    }break;
+                                    
+                                case 1:
+                                    {
+                                        Console.WriteLine("BILLY NOW");
+                                        Console.ReadLine();
+                                        /////BILLYS CODE HERE
+                                    }
+                            }break;
                     }
                 }
             }
         }
     }
 }
-                            
 
-                            
-                                        
+
+
+                                            
+                                     
+                                    
+       
