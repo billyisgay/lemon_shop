@@ -61,6 +61,7 @@ namespace lemon_stand
                 int till_float = rnd.Next(0, 11);
                 while (true)
                 {
+                    going = true; 
                     Console.WriteLine("what do you want to do?");
                     Console.WriteLine("check till works or 1");
                     Console.WriteLine("check float or 2");
@@ -152,12 +153,12 @@ namespace lemon_stand
                             int customer_wait = rnd2.Next(1500, 7000);
                             System.Threading.Thread.Sleep(customer_wait);
 
-                            while (true)
+                            while (going)
                             {
                                 string stock1 = "0";
                                 //wagwan this is where i am
                                 Console.WriteLine("hello");
-                                Console.WriteLine("what would you like to do");
+                                
 
                                 string[] menu0 = new string[] { " " };
                                 string[] menu1 = new string[] { "borgor [1]", " £3.00", stock1 };
@@ -177,6 +178,9 @@ namespace lemon_stand
                                     }
                                     Console.WriteLine(" ");
                                 }
+
+                                Console.WriteLine("if you would like quit enter [q]");
+                                Console.WriteLine("what would you like to do");
                                 string choice = Console.ReadLine();
 
                                 foreach (char i in choice)
@@ -205,6 +209,10 @@ namespace lemon_stand
                                     {
                                         Order[6] = menu6;
                                     }
+                                    if (i == 'q')
+                                    {
+                                        going = false;
+                                    }
                                 }
 
 
@@ -218,7 +226,7 @@ namespace lemon_stand
                                         }
                                         else
                                         {
-                                            Console.WriteLine(j);
+                                            Console.Write(j);
                                         }
                                     }
                                     Console.WriteLine(" ");
