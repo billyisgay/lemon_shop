@@ -151,43 +151,56 @@ namespace lemon_stand
                             break;
 
                         case "3":
-                            Console.Clear();
-                            Random rnd2 = new Random();
-                            int customer_wait = rnd2.Next(1500, 7000);
-                            System.Threading.Thread.Sleep(customer_wait);
                             switch (till_check)
                             {
-                                case 0:
-                                    Console.WriteLine("please open the till first");
-                                    System.Threading.Thread.Sleep(1000);
-                                    Console.Clear();
-                                    break;
-
                                 case 1:
+                                    Console.WriteLine("till checked");
                                     switch (float_check)
                                     {
                                         case 0:
-                                            Console.WriteLine("please check your float first");
+                                            Console.WriteLine("please check your float");
                                             System.Threading.Thread.Sleep(1000);
+                                            Console.Clear();
                                             break;
-                                            
-                                    }break;
-                                    
-                                case 1:
-                                    {
-                                        Console.WriteLine("BILLY NOW");
-                                        Console.ReadLine();
-                                        /////BILLYS CODE HERE
+                                       
+
+
+
                                     }
-                            }break;
+                                    break;
+
+
+                                case 0:
+
+
+                                    Console.WriteLine("please check till");
+                                    System.Threading.Thread.Sleep(1000);
+                                    Console.Clear();
+                                    break;
+                                    
+
+                               
+
+                            }while (true)
+                            {
+                                Console.WriteLine("hello");
+                                Console.ReadLine();
+                            }
+                   
+
+                    
                     }
                 }
             }
         }
     }
 }
+                           
+                            
 
+                            
 
+                                                
 
                                             
                                      
