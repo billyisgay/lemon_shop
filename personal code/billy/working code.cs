@@ -61,6 +61,7 @@ namespace lemon_stand
                 int till_float = rnd.Next(0, 11);
                 while (true)
                 {
+                    going = true; 
                     Console.WriteLine("what do you want to do?");
                     Console.WriteLine("check till works or 1");
                     Console.WriteLine("check float or 2");
@@ -152,55 +153,83 @@ namespace lemon_stand
                             int customer_wait = rnd2.Next(1500, 7000);
                             System.Threading.Thread.Sleep(customer_wait);
 
-                            while (true)
+                            while (going)
                             {
+                                string stock1 = "0";
                                 //wagwan this is where i am
                                 Console.WriteLine("hello");
+                                
+
+                                string[] menu0 = new string[] { " " };
+                                string[] menu1 = new string[] { "borgor [1]", " £3.00", stock1 };
+                                string[] menu2 = new string[] { "cheese borgor [2]", " £3.50", stock1 };
+                                string[] menu3 = new string[] { "chips [3]", " £1.50", stock1 };
+                                string[] menu4 = new string[] { "lemonade [4]", " £1.00", stock1 };
+                                string[] menu5 = new string[] { "coke [5]", " £1.00", stock1 };
+                                string[] menu6 = new string[] { "fanta [6]", " £1.00", stock1 };
+                                string[][] menuall = new string[][] { menu1, menu2, menu3, menu4, menu5, menu6 };
+                                string[][] Order = new string[7][] { menu0, menu0, menu0, menu0, menu0, menu0, menu0, };
+
+                                foreach (string[] i in menuall)
+                                {
+                                    foreach (string j in i)
+                                    {
+                                        Console.Write(j);
+                                    }
+                                    Console.WriteLine(" ");
+                                }
+
+                                Console.WriteLine("if you would like quit enter [q]");
                                 Console.WriteLine("what would you like to do");
+                                string choice = Console.ReadLine();
 
-                                menu1 = new string[3]("borgor [1]", "£3.00", stock1);
-                                menu2 = new string[3]("cheese borgor [2]", "£3.50", stock1);
-                                menu3 = new string[3]("chips [3]", "£1.50", stock1);
-                                menu4 = new string[3]("lemonade [4]", "£1.00", stock1);
-                                menu5 = new string[3]("coke [5]", "£1.00", stock1);
-                                menu6 = new string[3]("fanta [6]", "£1.00", stock1);
-                                menuall = new string[6][](menu1, menu2, menu3, menu4, menu5, menu6);
-                                string[] Order = new string[][] { };
-
-                                foreach(string i in menuall)
+                                foreach (char i in choice)
                                 {
-                                    Console.WriteLine(i);
-                                }
-                                choice = Console.ReadLine();
-
-                                if (choice == '1')
-                                {
-                                    Order =+ menu1;
-                                }
-                                if (choice == '2')
-                                {
-                                    Order =+ menu2;
-                                }
-                                if (choice == '3')
-                                {
-                                    Order =+ menu3;
-                                }
-                                if (choice == '4')
-                                {
-                                    Order =+ menu4;
-                                }
-                                if (choice == '5')
-                                {
-                                    Order =+ menu5;
-                                }
-                                if (choice == '6')
-                                {
-                                    Order =+ menu6;
+                                    if (i == '1')
+                                    {
+                                        Order[1] = menu1;
+                                    }
+                                    if (i == '2')
+                                    {
+                                        Order[2] = menu2;
+                                    }
+                                    if (i == '3')
+                                    {
+                                        Order[3] = menu3;
+                                    }
+                                    if (i == '5')
+                                    {
+                                        Order[4] = menu4;
+                                    }
+                                    if (i == '5')
+                                    {
+                                        Order[5] = menu5;
+                                    }
+                                    if (i == '6')
+                                    {
+                                        Order[6] = menu6;
+                                    }
+                                    if (i == 'q')
+                                    {
+                                        going = false;
+                                    }
                                 }
 
-                                foreach (string i in order)
+
+                                foreach (string[] i in Order)
                                 {
-                                    Console.WriteLine(i);
+                                    foreach (string j in i)
+                                    {
+                                        if (j == " ")
+                                        {
+
+                                        }
+                                        else
+                                        {
+                                            Console.Write(j);
+                                        }
+                                    }
+                                    Console.WriteLine(" ");
                                 }
                                 Console.WriteLine("is this everything?");
                             }
