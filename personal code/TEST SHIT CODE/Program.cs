@@ -60,6 +60,7 @@ namespace lemon_stand
                 Console.WriteLine("welcome to the shop");
                 int till_check = 0;
                 int float_check = 0;
+                int customers = 0;
                 Random rnd = new Random();
                 int till_float = rnd.Next(0, 11);
                 while (true)
@@ -105,7 +106,7 @@ namespace lemon_stand
                                     Console.WriteLine("you have {0} in your float", till_float);
                                     Console.WriteLine("is this okay?");
                                     string user_input = Console.ReadLine();
-
+                                    
                                     switch (user_input)
                                     {
                                         case "no":
@@ -162,42 +163,51 @@ namespace lemon_stand
                                             System.Threading.Thread.Sleep(1000);
                                             Console.Clear();
                                             break;
-                                       
 
-
-
-                                    }
-                                    break;
-
-
+                                        case 1:
+                                            Console.WriteLine("float checked");
+                                            System.Threading.Thread.Sleep(1000);
+                                            Console.Clear();
+                                            customers++;
+                                            break;
+                                    }break;
+         
                                 case 0:
-
-
                                     Console.WriteLine("please check till");
                                     System.Threading.Thread.Sleep(1000);
                                     Console.Clear();
                                     break;
-                                    
-
-                               
-
-                            }while (true)
-                            {
-                                Console.WriteLine("hello");
-                                Console.ReadLine();
                             }
-                   
+                            break;
 
-                    
+
+
+
+                    }if (customers == 0)
+                    {
+                        
                     }
+                    else
+                    {
+                        Console.WriteLine("fixed");
+                        Console.ReadLine();
+                    }
+
+
                 }
             }
         }
     }
-}
-                           
-                            
 
+}
+
+                
+
+                                    
+                              
+                               
+
+                            
                             
 
                                                 
