@@ -60,7 +60,6 @@ namespace lemon_stand
                 Console.WriteLine("welcome to the shop");
                 int till_check = 0;
                 int float_check = 0;
-                int customers = 0;
                 Random rnd = new Random();
                 int till_float = rnd.Next(0, 11);
                 while (true)
@@ -71,150 +70,131 @@ namespace lemon_stand
                     Console.WriteLine("wait for customers or 3");
                     string answer = Console.ReadLine();
 
-                    switch (answer)
+                    if (answer == "1")
                     {
-                        case "1":
-
-
-                            switch (till_check)
+                        Console.WriteLine("you have chosen 1");
+                        switch (till_check)
+                        {
+                            case 0:
+                                till_check++;
+                                Console.WriteLine("till is working");
+                                System.Threading.Thread.Sleep(1000);
+                                Console.Clear();
+                                break;
+                            case 1:
+                                Console.WriteLine("till is still working");
+                                System.Threading.Thread.Sleep(1000);
+                                Console.Clear();
+                                break;
+                        }
+                    }
+                    else if (answer == "2")
+                    {
+                        Console.WriteLine("you have chosen 2");
+                        if (till_check == 0)
+                        {
+                            Console.WriteLine("please open the till first");
+                            System.Threading.Thread.Sleep(1000);
+                            Console.Clear();
+                            continue;
+                        }
+                        else if (till_check == 1)
+                        {
+                            float_check++;
+                            Console.WriteLine("you have {0} in your float", till_float);
+                            Console.WriteLine("is this okay?");
+                            string user_input = Console.ReadLine();
+                            switch (user_input)
                             {
-                                case 0:
-                                    till_check++;
-                                    Console.WriteLine("till is working");
-                                    System.Threading.Thread.Sleep(1000);
-                                    Console.Clear();
-                                    break;
-                                case 1:
-                                    Console.WriteLine("till is still working");
-                                    System.Threading.Thread.Sleep(1000);
-                                    Console.Clear();
-                                    break;
-                            }
-                            break;
-                        case "2":
-
-
-                            switch (till_check)
-                            {
-                                case 0:
-                                    Console.WriteLine("please open the till first");
-                                    System.Threading.Thread.Sleep(1000);
-                                    Console.Clear();
-                                    break;
-                                case 1:
-                                    float_check++;
-                                    Console.WriteLine("you have {0} in your float", till_float);
-                                    Console.WriteLine("is this okay?");
-                                    string user_input = Console.ReadLine();
-                                    
-                                    switch (user_input)
+                                case "no":
+                                case "n":
+                                    Console.WriteLine("okay");
+                                    Console.WriteLine("do you want to remove money from the bank");
+                                    string user_input2 = Console.ReadLine();
+                                    switch (user_input2)
                                     {
+                                        case "yes":
+                                        case "y":
+                                            int money_needed = 10 - till_float;
+                                            Console.WriteLine(money_needed);
+                                            int final_float = money_needed + till_float;
+                                            till_float = final_float;
+                                            Console.WriteLine("your new float is {0}", final_float);
+                                            System.Threading.Thread.Sleep(2000);
+                                            Console.Clear();
+                                            break;
                                         case "no":
                                         case "n":
                                             Console.WriteLine("okay");
-                                            Console.WriteLine("do you want to remove money from the bank");
-                                            string user_input2 = Console.ReadLine();
-                                            switch (user_input2)
-                                            {
-                                                case "yes":
-                                                case "y":
-                                                    int money_needed = 10 - till_float;
-                                                    Console.WriteLine(money_needed);
-                                                    int final_float = money_needed + till_float;
-                                                    till_float = final_float;
-                                                    Console.WriteLine("your new float is {0}", final_float);
-                                                    System.Threading.Thread.Sleep(2000);
-                                                    Console.Clear();
-                                                    break;
-                                                case "no":
-                                                case "n":
-                                                    Console.WriteLine("okay - breaking");
-                                                    System.Threading.Thread.Sleep(500);
-                                                    Console.Clear();
-                                                    break;
-                                            }
+                                            System.Threading.Thread.Sleep(500);
+                                            Console.Clear();
                                             break;
 
-                                        case "yes":
-                                        case "y":
-                                            Console.WriteLine("your float is {0}", till_float);
-                                            System.Threading.Thread.Sleep(1000);
-                                            Console.Clear();
-                                            break;
-                                        default:
-                                            Console.WriteLine("please choose an option");
-                                            System.Threading.Thread.Sleep(1500);
-                                            Console.Clear();
-                                            break;
                                     }
-                                    break;
-                            }
-                            break;
+                                    continue;
 
-                        case "3":
-                            switch (till_check)
-                            {
-                                case 1:
-                                    Console.WriteLine("till checked");
-                                    switch (float_check)
-                                    {
-                                        case 0:
-                                            Console.WriteLine("please check your float");
-                                            System.Threading.Thread.Sleep(1000);
-                                            Console.Clear();
-                                            break;
-
-                                        case 1:
-                                            Console.WriteLine("float checked");
-                                            System.Threading.Thread.Sleep(1000);
-                                            Console.Clear();
-                                            customers++;
-                                            break;
-                                    }break;
-         
-                                case 0:
-                                    Console.WriteLine("please check till");
+                                case "yes":
+                                case "y":
+                                    Console.WriteLine("your float is {0}", till_float);
                                     System.Threading.Thread.Sleep(1000);
+                                    Console.Clear();
+                                    continue;
+                                default:
+                                    Console.WriteLine("please say yes or no");
+                                    System.Threading.Thread.Sleep(1500);
                                     Console.Clear();
                                     break;
                             }
-                            break;
+
+                        }
 
 
-
-
-                    }if (customers == 0)
+                    }
+                    else if (answer == "3")
                     {
-                        
+                        Console.WriteLine("you have chosen 3");
+                        if (till_check == 0)
+                        {
+                            Console.WriteLine("please check the till");
+                            System.Threading.Thread.Sleep(1500);
+                            Console.Clear();
+                            continue;
+                        }
+                        else if (till_check == 1)
+                        {
+                            if (float_check == 0)
+                            {
+                                Console.WriteLine("please check your float");
+                                System.Threading.Thread.Sleep(1500);
+                                Console.Clear();
+                                continue;
+                            }
+                            else if (float_check == 1)
+                            {
+                                while (true)
+                                {
+                                    Console.Clear();
+                                    Random customer_wait = new Random();
+                                    int wait_time = customer_wait.Next(1000, 4000);
+                                    System.Threading.Thread.Sleep(wait_time);
+                                    Console.WriteLine("hello");
+                                    Console.ReadLine();
+
+                                }
+
+                            }
+                        }
                     }
                     else
                     {
-                        ///// BILLY IS NEEDED HERE SO PUT YOUR GOD DAM MENU IN HERE ASAP PLEASE X 
+                        Console.WriteLine("please choose an option");
+                        System.Threading.Thread.Sleep(1500);
+                        Console.Clear();
 
-                        Console.WriteLine("fixed");
-                        Console.ReadLine();
                     }
-
 
                 }
             }
         }
     }
-
 }
-
-                
-
-                                    
-                              
-                               
-
-                            
-                            
-
-                                                
-
-                                            
-                                     
-                                    
-       
