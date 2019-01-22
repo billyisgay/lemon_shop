@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace lemon_stand
 {
     class Program
@@ -173,12 +174,206 @@ namespace lemon_stand
                             {
                                 while (true)
                                 {
+                                    bool going = true; 
                                     Console.Clear();
                                     Random customer_wait = new Random();
                                     int wait_time = customer_wait.Next(1000, 4000);
                                     System.Threading.Thread.Sleep(wait_time);
-                                    Console.WriteLine("hello");
-                                    Console.ReadLine();
+                                    // my code here
+
+                                    
+
+
+                                    while (going)
+                                    {
+                                        int total = 0;
+                                        Random nd1 = new Random();
+                                        int s1 = nd1.Next(1,10);
+                                        string stock1 =  s1.ToString();
+                                        Random nd2 = new Random();
+                                        int s2 = nd2.Next(1, 10);
+                                        string stock2 = s2.ToString();
+                                        Random nd3 = new Random();
+                                        int s3 = nd3.Next(1, 10);
+                                        string stock3 = s3.ToString();
+                                        Random nd4 = new Random();
+                                        int s4 = nd4.Next(1, 10);
+                                        string stock4 = s4.ToString();
+                                        Random nd5 = new Random();
+                                        int s5 = nd5.Next(1, 10);
+                                        string stock5 = s5.ToString();
+                                        Random nd6 = new Random();
+                                        int s6 = nd6.Next(1, 10);
+                                        string stock6 = s5.ToString();
+
+                                        int p1 = 3;
+                                        string price1 = p1.ToString();
+                                        int  p2 = 4;
+                                        string price2 = p2.ToString();
+                                        int p3 = 1;
+                                        string price3 = p3.ToString();
+                                        int p4 = 1;
+                                        string price4 = p4.ToString();
+                                        int p5 = 1;
+                                        string price5 = p5.ToString();
+                                        int p6 = 1;
+                                        string price6 = p6.ToString();
+                                        //wagwan this is where i am
+                                        Console.WriteLine("hello pick sum food");
+
+
+                                        string[] menu0 = new string[] { " " };
+                                        string[] menu1 = new string[] { "borgor [1]", " £",price1, " ", stock1 };
+                                        string[] menu2 = new string[] { "cheese borgor [2]", " £", price2, " ", stock2 };
+                                        string[] menu3 = new string[] { "chips [3]", " £", price3, " ", stock3 };
+                                        string[] menu4 = new string[] { "lemonade [4]", " £", price4, " ", stock4 };
+                                        string[] menu5 = new string[] { "coke [5]", " £", price5, " ", stock5 };
+                                        string[] menu6 = new string[] { "fanta [6]", " £", price6, " ", stock6 };
+                                        string[][] menuall = new string[][] { menu1, menu2, menu3, menu4, menu5, menu6 };
+                                        string[][] Order = new string[7][] { menu0, menu0, menu0, menu0, menu0, menu0, menu0, };
+
+                                        foreach (string[] i in menuall)
+                                        {
+                                            foreach (string j in i)
+                                            {
+                                                Console.Write(j);
+                                            }
+                                            Console.WriteLine(" ");
+                                        }
+
+                                        Console.WriteLine("if you would like quit or if your finished enter [q]");
+                                        Console.WriteLine("what would you like to do");
+                                        string choice = Console.ReadLine();
+
+                                        foreach (char i in choice)
+                                        {
+                                            if (i == '1')
+                                            {
+                                                Order[1] = menu1;
+                                            }
+                                            if (i == '2')
+                                            {
+                                                Order[2] = menu2;
+                                            }
+                                            if (i == '3')
+                                            {
+                                                Order[3] = menu3;
+                                            }
+                                            if (i == '5')
+                                            {
+                                                Order[4] = menu4;
+                                            }
+                                            if (i == '5')
+                                            {
+                                                Order[5] = menu5;
+                                            }
+                                            if (i == '6')
+                                            {
+                                                Order[6] = menu6;
+                                            }
+                                            if (i == 'q')
+                                            {
+                                                going = false;
+                                            }
+                                        }
+                                        bool ded = true;
+                                        while (ded)
+                                        {
+                                            foreach (string[] i in Order)
+                                            {
+                                                foreach (string j in i)
+                                                {
+                                                    if (j == " ")
+                                                    {
+
+                                                    }
+                                                    else
+                                                    {
+                                                        Console.Write(j);
+                                                    }
+                                                }
+                                                Console.WriteLine(" ");
+                                            }
+                                            Console.WriteLine("is this everything? [y] ");
+                                            string die = Console.ReadLine();
+                                            foreach(char i in die)
+                                            {
+                                                if (i == 'y')
+                                                {
+                                                    ded = false;
+                                                }
+                                            }
+
+                                        }
+                                        bool money = true;
+                                        while(money)
+                                        {
+                                            foreach (string[] i in Order)
+                                            {
+                                                foreach (string j in i)
+                                                {
+                                                    if(j == stock1)
+                                                    {
+                                                        int k1 = Int32.Parse(stock1);
+                                                        total = total + k1;
+                                                    }
+                                                    if (j == stock2)
+                                                    {
+                                                        int k2 = Int32.Parse(stock2);
+                                                        total = total + k2;
+                                                    }
+                                                    if (j == stock3)
+                                                    {
+                                                        int k3 = Int32.Parse(stock3);
+                                                        total = total + k3;
+                                                    }
+                                                    if (j == stock4)
+                                                    {
+                                                        int k4 = Int32.Parse(stock4);
+                                                        total = total + k4;
+                                                    }
+                                                    if (j == stock5)
+                                                    {
+                                                        int k5 = Int32.Parse(stock5);
+                                                        total = total + k5;
+                                                    }
+                                                    if (j == stock6)
+                                                    {
+                                                        int k6 = Int32.Parse(stock6);
+                                                        total = total + k6;
+                                                    }
+
+                                                }
+
+                                            }
+                                            Console.WriteLine(total);
+                                            Console.WriteLine("please put the amount you will pay");
+                                            string pay = Console.ReadLine();
+                                            int pay1 = Int32.Parse(pay);
+                                            if (pay1 >= total)
+                                            {
+                                                int change = pay1 - total;
+                                                string pay2 = change.ToString();
+                                                Console.WriteLine("*gives order* with ",pay2);
+                                            }
+                                            if (pay1 == total)
+                                            {
+                                                int change = 0;
+                                                Console.WriteLine("*gives order*");
+                                            }
+                                            if (pay1 <= total)
+                                            {
+                                                Console.WriteLine("this is not enough kys , NO FOOD 4 U"); ;
+                                            }
+                                            else
+                                            {
+                                                break;
+                                            }
+                                            
+
+                                        }
+
+                                    }
 
                                 }
 
