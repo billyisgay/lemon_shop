@@ -277,34 +277,34 @@ namespace lemon_stand
                                             }
                                         }
                                         bool ded = true;
-                                        while (ded)
+                                        
+                                        
+                                        foreach (string[] i in Order)
                                         {
-                                            foreach (string[] i in Order)
+                                            foreach (string j in i)
                                             {
-                                                foreach (string j in i)
+                                                if (j == " ")
                                                 {
-                                                    if (j == " ")
-                                                    {
 
-                                                    }
-                                                    else
-                                                    {
-                                                        Console.Write(j);
-                                                    }
                                                 }
-                                                Console.WriteLine(" ");
-                                            }
-                                            Console.WriteLine("is this everything? [y] ");
-                                            string die = Console.ReadLine();
-                                            foreach(char i in die)
-                                            {
-                                                if (i == 'y')
+                                                else
                                                 {
-                                                    ded = false;
+                                                    Console.Write(j);
                                                 }
                                             }
-
+                                            Console.WriteLine(" ");
                                         }
+                                        Console.WriteLine("is this everything? [y] ");
+                                        string die = Console.ReadLine();
+                                        foreach(char i in die)
+                                        {
+                                            if (i == 'y')
+                                            {
+                                                ded = false;
+                                            }
+                                        }
+
+                                        
                                         bool money = true;
                                         while(money)
                                         {
@@ -346,7 +346,8 @@ namespace lemon_stand
                                                 }
 
                                             }
-                                            Console.WriteLine(total);
+                                            string total1 = total.ToString();
+                                            Console.WriteLine("this costs ", total1);
                                             Console.WriteLine("please put the amount you will pay");
                                             string pay = Console.ReadLine();
                                             int pay1 = Int32.Parse(pay);
@@ -355,11 +356,13 @@ namespace lemon_stand
                                                 int change = pay1 - total;
                                                 string pay2 = change.ToString();
                                                 Console.WriteLine("*gives order* with ",pay2);
+                                                break;
                                             }
                                             if (pay1 == total)
                                             {
-                                                int change = 0;
+                                                
                                                 Console.WriteLine("*gives order*");
+                                                break;
                                             }
                                             if (pay1 <= total)
                                             {
