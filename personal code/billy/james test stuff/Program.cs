@@ -242,68 +242,78 @@ namespace lemon_stand
                                         }
 
                                         Console.WriteLine("if you would like quit or if your finished enter [q]");
-                                        Console.WriteLine("what would you like to do");
-                                        string choice = Console.ReadLine();
-
-                                        foreach (char i in choice)
-                                        {
-                                            if (i == '1')
-                                            {
-                                                Order[1] = menu1;
-                                            }
-                                            if (i == '2')
-                                            {
-                                                Order[2] = menu2;
-                                            }
-                                            if (i == '3')
-                                            {
-                                                Order[3] = menu3;
-                                            }
-                                            if (i == '5')
-                                            {
-                                                Order[4] = menu4;
-                                            }
-                                            if (i == '5')
-                                            {
-                                                Order[5] = menu5;
-                                            }
-                                            if (i == '6')
-                                            {
-                                                Order[6] = menu6;
-                                            }
-                                            if (i == 'q')
-                                            {
-                                                going = false;
-                                            }
-                                        }
+                                        
+                                        
                                         bool ded = true;
-                                        
-                                        
-                                        foreach (string[] i in Order)
+                                        while(ded)
                                         {
-                                            foreach (string j in i)
-                                            {
-                                                if (j == " ")
-                                                {
+                                            Console.WriteLine("what would you like to do");
+                                            string choice = Console.ReadLine();
 
+                                            foreach (char i in choice)
+                                            {
+                                                if (i == '1')
+                                                {
+                                                    Order[1] = menu1;
+                                                }
+                                                if (i == '2')
+                                                {
+                                                    Order[2] = menu2;
+                                                }
+                                                if (i == '3')
+                                                {
+                                                    Order[3] = menu3;
+                                                }
+                                                if (i == '5')
+                                                {
+                                                    Order[4] = menu4;
+                                                }
+                                                if (i == '5')
+                                                {
+                                                    Order[5] = menu5;
+                                                }
+                                                if (i == '6')
+                                                {
+                                                    Order[6] = menu6;
+                                                }
+                                                if (i == 'q')
+                                                {
+                                                    going = false;
+                                                }
+                                            }
+                                        
+                                        
+                                        
+                                            foreach (string[] i in Order)
+                                            {
+                                                foreach (string j in i)
+                                                {
+                                                    if (j == " ")
+                                                    {
+
+                                                    }
+                                                    else
+                                                    {
+                                                        Console.Write(j);
+                                                    }
+                                                }
+                                                Console.WriteLine(" ");
+                                            }
+                                            Console.WriteLine("is this everything? [y] ");
+                                            string die = Console.ReadLine();
+                                            foreach(char i in die)
+                                            {
+                                                if (i == 'y')
+                                                {
+                                                    ded = false;
                                                 }
                                                 else
                                                 {
-                                                    Console.Write(j);
+                                                    ded = true;
                                                 }
-                                            }
-                                            Console.WriteLine(" ");
-                                        }
-                                        Console.WriteLine("is this everything? [y] ");
-                                        string die = Console.ReadLine();
-                                        foreach(char i in die)
-                                        {
-                                            if (i == 'y')
-                                            {
-                                                ded = false;
-                                            }
-                                        }
 
+                                            }
+                                        }
                                         
                                         bool money = true;
                                         while(money)
@@ -313,34 +323,28 @@ namespace lemon_stand
                                                 foreach (string j in i)
                                                 {
                                                     if(j == stock1)
-                                                    {
-                                                        int k1 = Int32.Parse(stock1);
-                                                        total = total + k1;
+                                                    {                                                       
+                                                        total = total + s1;
                                                     }
                                                     if (j == stock2)
                                                     {
-                                                        int k2 = Int32.Parse(stock2);
-                                                        total = total + k2;
+                                                        total = total + s2;
                                                     }
                                                     if (j == stock3)
                                                     {
-                                                        int k3 = Int32.Parse(stock3);
-                                                        total = total + k3;
+                                                        total = total + s3;
                                                     }
                                                     if (j == stock4)
                                                     {
-                                                        int k4 = Int32.Parse(stock4);
-                                                        total = total + k4;
+                                                        total = total + s4;
                                                     }
                                                     if (j == stock5)
                                                     {
-                                                        int k5 = Int32.Parse(stock5);
-                                                        total = total + k5;
+                                                        total = total + s5;
                                                     }
                                                     if (j == stock6)
                                                     {
-                                                        int k6 = Int32.Parse(stock6);
-                                                        total = total + k6;
+                                                        total = total + s6;
                                                     }
 
                                                 }
@@ -350,7 +354,7 @@ namespace lemon_stand
                                             Console.WriteLine("this costs ", total1);
                                             Console.WriteLine("please put the amount you will pay");
                                             string pay = Console.ReadLine();
-                                            int pay1 = Int32.Parse(pay);
+                                            int pay1 = Convert.Int32(pay);
                                             if (pay1 >= total)
                                             {
                                                 int change = pay1 - total;
