@@ -186,7 +186,7 @@ namespace lemon_stand
 
                                     while (going)
                                     {
-                                        int total = 0;
+                                        
                                         Random nd1 = new Random();
                                         int s1 = nd1.Next(1,10);
                                         string stock1 =  s1.ToString();
@@ -223,12 +223,12 @@ namespace lemon_stand
 
 
                                         string[] menu0 = new string[] { " " };
-                                        string[] menu1 = new string[] { "borgor [1]", " £",price1, " ", stock1 };
-                                        string[] menu2 = new string[] { "cheese borgor [2]", " £", price2, " ", stock2 };
-                                        string[] menu3 = new string[] { "chips [3]", " £", price3, " ", stock3 };
-                                        string[] menu4 = new string[] { "lemonade [4]", " £", price4, " ", stock4 };
-                                        string[] menu5 = new string[] { "coke [5]", " £", price5, " ", stock5 };
-                                        string[] menu6 = new string[] { "fanta [6]", " £", price6, " ", stock6 };
+                                        string[] menu1 = new string[] { "borgor [1]", " £",price1, " stock = ", stock1 };
+                                        string[] menu2 = new string[] { "cheese borgor [2]", " £", price2, " stock = ", stock2 };
+                                        string[] menu3 = new string[] { "chips [3]", " £", price3, " stock = ", stock3 };
+                                        string[] menu4 = new string[] { "lemonade [4]", " £", price4, " stock = ", stock4 };
+                                        string[] menu5 = new string[] { "coke [5]", " £", price5, " stock = ", stock5 };
+                                        string[] menu6 = new string[] { "fanta [6]", " £", price6, " stock = ", stock6 };
                                         string[][] menuall = new string[][] { menu1, menu2, menu3, menu4, menu5, menu6 };
                                         string[][] Order = new string[7][] { menu0, menu0, menu0, menu0, menu0, menu0, menu0, };
 
@@ -316,65 +316,73 @@ namespace lemon_stand
                                         }
                                         
                                         bool money = true;
-                                        while(money)
+                                        int total = 0;
+                                        while(money = true)
                                         {
                                             foreach (string[] i in Order)
                                             {
                                                 foreach (string j in i)
                                                 {
-                                                    if(j == stock1)
+                                                    if(j == price1)
                                                     {                                                       
-                                                        total = total + s1;
+                                                        total = total + p1;
                                                     }
-                                                    if (j == stock2)
+                                                    if (j == price2)
                                                     {
-                                                        total = total + s2;
+                                                        total = total + p2;
                                                     }
-                                                    if (j == stock3)
+                                                    if (j == price3)
                                                     {
-                                                        total = total + s3;
+                                                        total = total + p3;
                                                     }
-                                                    if (j == stock4)
+                                                    if (j == price4)
                                                     {
-                                                        total = total + s4;
+                                                        total = total + p4;
                                                     }
-                                                    if (j == stock5)
+                                                    if (j == price5)
                                                     {
-                                                        total = total + s5;
+                                                        total = total + p5;
                                                     }
-                                                    if (j == stock6)
+                                                    if (j == price6)
                                                     {
-                                                        total = total + s6;
+                                                        total = total + p6;
                                                     }
 
                                                 }
 
                                             }
-                                            string total1 = total.ToString();
-                                            Console.WriteLine("this costs ", total1);
+                                            
+                                            //string total1 = total.ToString();
+                                            Console.WriteLine($"this costs £{total:F2}");
+
                                             Console.WriteLine("please put the amount you will pay");
                                             string pay = Console.ReadLine();
-                                            int pay1 = Convert.Int32(pay);
+                                            int pay1 = Int32.Parse(pay);
                                             if (pay1 >= total)
                                             {
                                                 int change = pay1 - total;
                                                 string pay2 = change.ToString();
                                                 Console.WriteLine("*gives order* with ",pay2);
-                                                break;
+                                                
+                                                ded = false;
+                                                
                                             }
                                             if (pay1 == total)
                                             {
                                                 
                                                 Console.WriteLine("*gives order*");
-                                                break;
+                                                
                                             }
                                             if (pay1 <= total)
                                             {
-                                                Console.WriteLine("this is not enough kys , NO FOOD 4 U"); ;
+                                                Console.WriteLine("this is not enough kys , NO FOOD 4 U"); 
+                                                ded = false;
                                             }
                                             else
                                             {
-                                                break;
+                                                
+                                                ded = false;
+                                                 
                                             }
                                             
 
