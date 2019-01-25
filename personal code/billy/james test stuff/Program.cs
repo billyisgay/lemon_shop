@@ -161,7 +161,7 @@ namespace lemon_stand
                             Console.Clear();
                             continue;
                         }
-                        else if (till_check == 1)
+                        else if (till_check > 0)
                         {
                             if (float_check == 0)
                             {
@@ -170,7 +170,7 @@ namespace lemon_stand
                                 Console.Clear();
                                 continue;
                             }
-                            else if (float_check == 1)
+                            else if (float_check > 0)
                             {
                                 while (true)
                                 {
@@ -243,7 +243,7 @@ namespace lemon_stand
 
                                         Console.WriteLine("if you would like quit or if your finished enter [q]");
                                         
-                                        
+                                        int kys = 0;
                                         bool ded = true;
                                         while(ded)
                                         {
@@ -279,11 +279,25 @@ namespace lemon_stand
                                                 if (i == 'q')
                                                 {
                                                     going = false;
+                                                    ded = false;
+                                                }
+                                                if (i == ' ')
+                                                {
+                                                    kys = kys -1;
+                                                }
+                                                else 
+                                                {
+                                                    kys = kys + 1;
+                                                    
                                                 }
                                             }
                                         
                                         
-                                        
+                                            if (kys > 1)
+                                            {
+                                                Console.WriteLine("lisen Here u CUNT type a order");
+                                            }
+
                                             foreach (string[] i in Order)
                                             {
                                                 foreach (string j in i)
@@ -351,38 +365,50 @@ namespace lemon_stand
                                                 }
 
                                             }
-                                            
+                                            int pay1 = 0;
                                             //string total1 = total.ToString();
                                             Console.WriteLine($"this costs £{total:F2}");
 
                                             Console.WriteLine("please put the amount you will pay");
                                             string pay = Console.ReadLine();
-                                            int pay1 = Int32.Parse(pay);
+                                            try
+                                            {
+
+                                                  pay1 = pay1 + Int32.Parse(pay);
+                                            }
+                                            catch
+                                            {
+                                                Console.WriteLine("what u doing with your life");
+                                            }
+
                                             if (pay1 >= total)
                                             {
                                                 int change = pay1 - total;
                                                 string pay2 = change.ToString();
-                                                Console.WriteLine("*gives order* with ",pay2);
-                                                
+                                                Console.Clear();
+                                                Console.WriteLine($"gives *order* with £{pay2:F2}");
+                                                System.Threading.Thread.Sleep(100000);
                                                 ded = false;
                                                 
                                             }
                                             if (pay1 == total)
                                             {
-                                                
+                                                Console.Clear();
                                                 Console.WriteLine("*gives order*");
-                                                
+                                                System.Threading.Thread.Sleep(100000);
                                             }
                                             if (pay1 <= total)
                                             {
+                                                Console.Clear();
                                                 Console.WriteLine("this is not enough kys , NO FOOD 4 U"); 
+                                                System.Threading.Thread.Sleep(100000);
                                                 ded = false;
                                             }
                                             else
                                             {
-                                                
+                                                Console.Clear();
                                                 ded = false;
-                                                 
+                                                System.Threading.Thread.Sleep(100000); 
                                             }
                                             
 
