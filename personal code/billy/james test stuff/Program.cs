@@ -278,8 +278,11 @@ namespace lemon_stand
                                                 }
                                                 if (i == 'q')
                                                 {
-                                                    going = false;
+                                                    Console.WriteLine("pls work"); 
                                                     ded = false;
+                                                    break;
+                                                    
+
                                                 }
                                                 if (i == ' ')
                                                 {
@@ -292,10 +295,14 @@ namespace lemon_stand
                                                 }
                                             }
                                         
-                                        
+                                            if (ded == false)
+                                            {
+                                                break;
+                                            }
+
                                             if (kys > 1)
                                             {
-                                                Console.WriteLine("lisen Here u CUNT type a order");
+                                                Console.WriteLine("lisen Here u, type an order");
                                             }
 
                                             foreach (string[] i in Order)
@@ -319,7 +326,14 @@ namespace lemon_stand
                                             {
                                                 if (i == 'y')
                                                 {
+                                                    
                                                     ded = false;
+                                                    break;
+                                                }
+                                                if (i == 'n')
+                                                {
+                                                    ded = true;
+                                                    break;
                                                 }
                                                 else
                                                 {
