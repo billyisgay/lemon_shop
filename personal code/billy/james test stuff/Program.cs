@@ -172,7 +172,8 @@ namespace lemon_stand
                             }
                             else if (float_check > 0)
                             {
-                                while (true)
+                                bool idk = true;
+                                while (idk)
                                 {
                                     bool going = true; 
                                     Console.Clear();
@@ -231,6 +232,11 @@ namespace lemon_stand
                                         string[] menu6 = new string[] { "fanta [6]", " £", price6, " stock = ", stock6 };
                                         string[][] menuall = new string[][] { menu1, menu2, menu3, menu4, menu5, menu6 };
                                         string[][] Order = new string[7][] { menu0, menu0, menu0, menu0, menu0, menu0, menu0, };
+                                        
+                                        if(idk = false)
+                                        {
+                                            break;
+                                        }
 
                                         foreach (string[] i in menuall)
                                         {
@@ -401,34 +407,52 @@ namespace lemon_stand
                                                 string pay2 = change.ToString();
                                                 Console.Clear();
                                                 Console.WriteLine($"gives *order* with £{pay2:F2}");
-                                                System.Threading.Thread.Sleep(100000);
+                                                System.Threading.Thread.Sleep(1000);
                                                 ded = false;
+                                                money = false;
+                                                idk = false;
+                                                break;
                                                 
                                             }
                                             if (pay1 == total)
                                             {
                                                 Console.Clear();
                                                 Console.WriteLine("*gives order*");
-                                                System.Threading.Thread.Sleep(100000);
+                                                System.Threading.Thread.Sleep(1000);
+                                                money = false;
+                                                ded = false;
+                                                idk = false;
+                                                break;
                                             }
                                             if (pay1 <= total)
                                             {
                                                 Console.Clear();
                                                 Console.WriteLine("this is not enough kys , NO FOOD 4 U"); 
-                                                System.Threading.Thread.Sleep(100000);
+                                                System.Threading.Thread.Sleep(1000);
+                                                money = false;
                                                 ded = false;
+                                                idk = false;
+                                                break;
                                             }
                                             else
                                             {
                                                 Console.Clear();
+                                                money = false;
                                                 ded = false;
-                                                System.Threading.Thread.Sleep(100000); 
+                                                idk = false;
+                                                break;
+                                                System.Threading.Thread.Sleep(1000); 
                                             }
                                             
 
                                         }
 
                                     }
+                                    if (idk = false)
+                                    {
+                                        break;
+                                    }
+
 
                                 }
 
