@@ -11,6 +11,7 @@ namespace lemon_stand
     {
         static void Main(string[] args)
         {
+            bool ded = true;// delerin veribles 
             String username;
             String password;
             /// array of usernames and passwords
@@ -176,6 +177,11 @@ namespace lemon_stand
                                 bool idk = true;
                                 while (idk)
                                 {
+                                    if (ded == false)
+                                    {
+                                        break;
+                                    }
+                                    ded = true;
                                     bool going = true; 
                                     Console.Clear();
                                     Random customer_wait = new Random();
@@ -236,7 +242,11 @@ namespace lemon_stand
                                     /// its over tell my family i love them :(
                                     while (going)
                                     {
-                                        
+                                        if (ded == false)
+                                        {
+                                            break;
+                                        }
+                                        ded = true;
                                         Random nd1 = new Random();
                                         int s1 = nd1.Next(1,10);
                                         string stock1 =  s1.ToString();
@@ -299,7 +309,7 @@ namespace lemon_stand
                                         Console.WriteLine("if you would like quit or if your finished enter [q]");
                                         
                                         int kys = 0;
-                                        bool ded = true;
+                                        
                                         while(ded)
                                         {
                                             Console.WriteLine("what would you like to do");
@@ -319,7 +329,7 @@ namespace lemon_stand
                                                 {
                                                     Order[3] = menu3;
                                                 }
-                                                if (i == '5')
+                                                if (i == '4')
                                                 {
                                                     Order[4] = menu4;
                                                 }
@@ -335,6 +345,10 @@ namespace lemon_stand
                                                 {
                                                     Console.WriteLine("pls work"); 
                                                     ded = false;
+                                                    idk = false;
+                                                    
+                                                    Console.Clear();
+                                                    System.Threading.Thread.Sleep(1500);
                                                     break;
                                                     
 
@@ -470,7 +484,7 @@ namespace lemon_stand
                                                 System.Threading.Thread.Sleep(1000);
                                                 money = false;
                                                 ded = false;
-                                                idk = false;
+                                                idk = true;
                                                 break;
                                             }
                                             if (pay1 <= total)
@@ -480,7 +494,7 @@ namespace lemon_stand
                                                 System.Threading.Thread.Sleep(1000);
                                                 money = false;
                                                 ded = false;
-                                                idk = false;
+                                                idk = true;
                                                 break;
                                             }
                                             else
@@ -508,13 +522,7 @@ namespace lemon_stand
                             }
                         }
                     }
-                    else
-                    {
-                        Console.WriteLine("please choose an option");
-                        System.Threading.Thread.Sleep(1500);
-                        Console.Clear();
-
-                    }
+                    
 
                 }
             }
