@@ -13,10 +13,11 @@ namespace lemon_stand
         {
             String username;
             String password;
+            /// array of usernames and passwords
             String[,] accnts = { { "reggie", "1234" }, { "bildo", "1234" }, { "isaac", "1234" } };
             int row;
             bool isValideUser = false;
-            for (int x = 3; x >= 1; x--)
+            for (int x = 3; x >= 1; x--)/// login attempts counter source:(google)
             {
                 Console.WriteLine("You have " + x + " attempt/s.");
                 Console.Write("Enter Username>> ");
@@ -25,14 +26,14 @@ namespace lemon_stand
                 password = Console.ReadLine();
                 for (row = 0; row < 3; row++)
                 {
-                    if (username.Equals(accnts[row, 0]) && password.Equals(accnts[row, 1]))
+                    if (username.Equals(accnts[row, 0]) && password.Equals(accnts[row, 1]))/// checking against username in array
                     {
                         Console.WriteLine("Welcome " + accnts[row, 0] + "!");
                         isValideUser = true;
                         break;
                     }
                 }
-                if (!isValideUser)
+                if (!isValideUser)/// invalid login statment
                 {
                     Console.WriteLine("Invalid Input.");
                     if (x != 1)
@@ -59,10 +60,10 @@ namespace lemon_stand
                 System.Threading.Thread.Sleep(1000);
                 Console.Clear();
                 Console.WriteLine("welcome to the shop");
-                int till_check = 0;
-                int float_check = 0;
-                Random rnd = new Random();
-                int till_float = rnd.Next(0, 11);
+                int till_check = 0;/// variable set to false for checking if things work 
+                int float_check = 0;/// variable set to false for checking if things work pt 2
+                Random rnd = new Random();///creating random
+                int till_float = rnd.Next(0, 11);/// random between 1-10
                 while (true)
                 {
                     Console.WriteLine("what do you want to do?");
@@ -71,9 +72,9 @@ namespace lemon_stand
                     Console.WriteLine("wait for customers or 3");
                     string answer = Console.ReadLine();
 
-                    if (answer == "1")
+                    if (answer == "1")/// if statments for if they choose option 1, 2, 3
                     {
-                        Console.WriteLine("you have chosen 1");
+                        Console.WriteLine("you have chosen 1");/// option 1 chosen
                         switch (till_check)
                         {
                             case 0:
@@ -89,27 +90,27 @@ namespace lemon_stand
                                 break;
                         }
                     }
-                    else if (answer == "2")
+                    else if (answer == "2")// option 2 chosen
                     {
                         Console.WriteLine("you have chosen 2");
-                        if (till_check == 0)
+                        if (till_check == 0)/// checks if the till has been opened before you can check your float
                         {
                             Console.WriteLine("please open the till first");
                             System.Threading.Thread.Sleep(1000);
                             Console.Clear();
                             continue;
                         }
-                        else if (till_check == 1)
+                        else if (till_check == 1)/// till has been checked
                         {
                             float_check++;
                             Console.WriteLine("you have {0} in your float", till_float);
                             Console.WriteLine("is this okay?");
                             string user_input = Console.ReadLine();
-                            switch (user_input)
+                            switch (user_input)/// idk why i used a switch statment it looked cool IF STATMENTS FOR THE WIN
                             {
                                 case "no":
                                 case "n":
-                                    Console.WriteLine("okay");
+                                    Console.WriteLine("okay");/// everything is going to be okay is what i tell myself when i press f5
                                     Console.WriteLine("do you want to remove money from the bank");
                                     string user_input2 = Console.ReadLine();
                                     switch (user_input2)
@@ -119,7 +120,7 @@ namespace lemon_stand
                                             int money_needed = 10 - till_float;
                                             Console.WriteLine(money_needed);
                                             int final_float = money_needed + till_float;
-                                            till_float = final_float;
+                                            till_float = final_float;/// can you read?
                                             Console.WriteLine("your new float is {0}", final_float);
                                             System.Threading.Thread.Sleep(2000);
                                             Console.Clear();
@@ -153,7 +154,7 @@ namespace lemon_stand
                     }
                     else if (answer == "3")
                     {
-                        Console.WriteLine("you have chosen 3");
+                        Console.WriteLine("you have chosen 3");/// back to option 3 again 
                         if (till_check == 0)
                         {
                             Console.WriteLine("please check the till");
@@ -180,11 +181,59 @@ namespace lemon_stand
                                     Random customer_wait = new Random();
                                     int wait_time = customer_wait.Next(1000, 4000);
                                     System.Threading.Thread.Sleep(wait_time);
-                                    // my code here
+                                    /// stop looking here it gets worse, dont bother... its not worth it 
+                                    
+
+
+
+
+
+
+
+
+
+
+                                    /// im warning you....
+                                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                    /// last chance!
+                                    
+
+
+
+
+
+
+
+
+
+
+
+
 
                                     
 
 
+
+                                    
+
+                                    /// its over tell my family i love them :(
                                     while (going)
                                     {
                                         
@@ -219,7 +268,7 @@ namespace lemon_stand
                                         string price5 = p5.ToString();
                                         int p6 = 1;
                                         string price6 = p6.ToString();
-                                        //wagwan this is where i am
+                                        //wagwan this is where i am (billybear)
                                         Console.WriteLine("hello pick sum food");
 
 
